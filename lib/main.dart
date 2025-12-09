@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_app/examples/example_four.dart';
+import 'package:riverpod_app/examples/example_five.dart';
 
 void main() {
-  runApp(ProviderScope(child: MaterialApp(home: const ExampleFour())));
+  runApp(ProviderScope(child: MaterialApp(home: const ExampleFive())));
 }
