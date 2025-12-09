@@ -11,6 +11,9 @@ class ExampleOne extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final result = ref.watch(staticStringProvider);
-    return Scaffold(body: Center(child: Text(result)));
+    return Scaffold(
+      appBar: AppBar(title: Text('Example One')),
+      body: Center(child: Text(result)),
+    );
   }
 }
