@@ -30,7 +30,7 @@ class _ExampleThreeState extends ConsumerState<ExampleThree> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Text Form')),
+      appBar: AppBar(title: const Text('Example Three')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
