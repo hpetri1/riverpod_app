@@ -1,0 +1,37 @@
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:riverpod_app/examples/example_eight/todo_model.dart';
+
+final todoListProvider =
+    StateNotifierProvider<TodoListNotifier, List<TodoModel>>(
+      (_) => TodoListNotifier([]),
+    );
+
+class TodoListNotifier extends StateNotifier<List<TodoModel>> {
+  TodoListNotifier(super.state);
+
+  void add(String title) {
+    final newTodo = TodoModel(
+      id: state.isEmpty ? 0 : state.last.id + 1,
+      title: title,
+      complete: false,
+    );
+
+    state = [...state, newTodo];
+  }
+
+  void remove(int id) {
+    state = state.where((t) => t.id != id).toList();
+  }
+
+  void toggle(int id) {
+    final todos = [...state];
+    final index = todos.indexWhere((t) => t.id == id);
+
+    if (index == -1) return;
+
+    final todo = todos[index];
+    todos[index] = todo.copyWith(complete: !todo.complete);
+
+    state = todos;
+  }
+}
